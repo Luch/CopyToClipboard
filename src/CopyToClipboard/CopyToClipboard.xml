@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="CopyToClipboard.widget.CopyToClipboard" needsEntityContext="false" xmlns="http://www.mendix.com/widget/1.0/">
+  <name>CopyToClipboard</name>
+  <description>CopyToClipboard for Mendix.</description>
+
+  <icon>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNWWFMmUAAAHfSURBVDhPjZPvS9tgEMfzNwwdQ1BfzG26+UJxwmQ4hojK2JCJ2kYcFPTP8J1vBnsz8G3dGxURfKWIIJZJ1TClSdM+SRuaV+6VmrH1B8KQtrfvNckM0qIHx13u7nPPPZdEMgzjkRCiVVXVlnQ63afr+kPEOuAPQ9eh75Br9+r6OQ/72LKsJgnOe07kcrnmZDL5Av4DaFsqlZKR24ONcONEItEEsJvzfBji4xI6fwxHzYXwsmnPQD9vCfvrjrCPVOGgiI5V8YufOT7zzbS5Tl42FtFoVEKHZwisrp2eU/anQ8qx0lCzZ5e0kbgg1G+apvnEPRlwzPpN5XKZisViQ+V83P5TgzH+JMMDPhyUarVKjuNQpVLxIq4E4B6Jl1QPVjWNspZFWJQXccWHwfXwnSP14B8nJ5TP52k/FvMirvgwJp76v7DbsKIoFI/HazYoPlxbGGYfqgd/PzigQqFQmyAoPozXOMLwWD0YE1FS1wl38yKuBE5+03BsllKp5Hk34sP4SJ7yyTLD2/oFXf29vlN3xaW/sFkJHXoZDi0d0fSX3Ts1tHTow538kbyUoyIsR42V+2ooKj7huq/4r5qHMwjbhSnmNE17jiW9xvME/qYu2A/Qt5xHXSSTyXQzKISY/wdlo/FbSXD6+QAAAABJRU5ErkJggg==</icon>
+
+  <properties>
+ 		<property key="elementnameString" type="string" required="true" >
+            <caption>ElementName</caption>
+            <category>Setup</category>
+            <description>Name of the Element to copy value from.</description>
+        </property>
+		
+        <property key="buttoncaption" type="string" required="false" defaultValue="Copy to clipboard">
+            <caption>Caption</caption>
+            <category>General</category>
+            <description>The caption to show on button</description>
+        </property>
+
+        <property key="buttonimage" type="image" required="false" >
+            <caption>Image</caption>
+            <category>General</category>
+            <description>The image to show on button</description>
+        </property>
+
+        <property key="buttontooltip" type="string" required="false" >
+            <caption>Tooltip</caption>
+            <category>General</category>
+            <description>The tooltip to show on button hover</description>
+        </property>
+
+        <property key="buttonclass" type="string" required="false" >
+            <caption>Button Class</caption>
+            <category>General</category>
+            <description>Class</description>
+        </property>
+
+        <property key="buttonstyle" type="string" required="false" >
+            <caption>Button Style</caption>
+            <category>General</category>
+            <description>Style</description>
+        </property>
+
+  </properties>
+</widget>
+
