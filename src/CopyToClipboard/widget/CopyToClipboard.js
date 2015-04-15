@@ -19,7 +19,7 @@
 // Required module list. Remove unnecessary modules, you can always get them back from the boilerplate.
 require({
     packages: [{ name: 'jquery', location: '../../widgets/CopyToClipboard/lib', main: 'jquery-1.11.2.min' },
-			   { name: 'zeroclipboard', location: '../../widgets/CopyToClipboard/lib', main: 'zeroclipboard.min' }]
+			   { name: 'zeroclipboard', location: '../../widgets/CopyToClipboard/lib', main: 'ZeroClipboard.min' }]
 }, [
     'dojo/_base/declare', 'mxui/widget/_WidgetBase', 'dijit/_TemplatedMixin',
     'mxui/dom', 'dojo/dom', 'dojo/query', 'dojo/dom-prop', 'dojo/dom-geometry', 'dojo/dom-class', 'dojo/dom-style', 'dojo/dom-construct', 'dojo/_base/array', 'dojo/_base/lang', 'dojo/text',
@@ -77,7 +77,8 @@ require({
 			zcbbuttonid = '#' + zcbbuttonid;
 
 			// initiate ZeroClipboard
-			var clip = new ZeroClipboard($(zcbbuttonid), {swfPath: "CopyToClipboard/lib"} );
+			ZeroClipboard.config({ swfPath: '/widgets/CopyToClipboard/lib/ZeroClipboard.swf' });
+			var clip = new ZeroClipboard($(zcbbuttonid));
  
 			clip.on("ready", function(event) {
 				console.log("Flash movie loaded and ready.");
