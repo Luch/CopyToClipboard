@@ -115,11 +115,13 @@ define('CopyToClipboard/widget/CopyToClipboard', [
 					textareaNode = domQuery(this._targetElementSelector + " textarea")[0];
 					if(textareaNode) {
 						event.clipboardData.setData('text/plain', textareaNode.value);
+						return;
 					}
 					
 					selectNode = domQuery(this._targetElementSelector + " select" )[0];
 					if(selectNode) {
 						event.clipboardData.setData('text/plain', selectNode.options[selectNode.selectedIndex].text);
+						return;
 					}
 				}));
 
