@@ -17,12 +17,10 @@
     
 */
 // Required module list. Remove unnecessary modules, you can always get them back from the boilerplate.
-require({
-    packages: [{ name: 'zeroclipboard', location: '../../widgets/CopyToClipboard/lib', main: 'ZeroClipboard.min' }]
-}, [
+define('CopyToClipboard/widget/CopyToClipboard', [
     'dojo/_base/declare', 'mxui/widget/_WidgetBase', 'dijit/_TemplatedMixin',
 	'mxui/dom', 'dojo/dom', 'dojo/query', 'dojo/dom-class', 'dojo/dom-style', 'dojo/dom-construct', 'dojo/dom-attr', 'dojo/_base/lang', 'dojo/text', 'dojo/text!CopyToClipboard/widget/template/CopyToClipboard.html',
-    'zeroclipboard'
+	'widgets/CopyToClipboard/lib/ZeroClipboard.min'
 ], function (declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domClass, domStyle, domConstruct, domAttr, lang, text, widgetTemplate, ZeroClipboard) {
     'use strict';
     
@@ -51,15 +49,19 @@ require({
 
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
-            
+			this._updateRendering();
+		},
+
+		_updateRendering: function() {
+			
 			var buttonImageNode = null;
 			this._targetElementSelector = '.mx-name-' + this.elementnameString;
 			this._targetElement = domQuery(this._targetElementSelector)[0];
-			
+
 			if(this._targetElement) {
 				domClass.add(this._targetElement,'CopyToClipboard_clip_area');
 			}
-			
+
 			// compose button html
 			this._zeroClipboardButton = domConstruct.create('button', {
 				'type' : 'button',
@@ -68,7 +70,7 @@ require({
 				'innerHTML': this.buttoncaption
 			});
 			domConstruct.place(this._zeroClipboardButton, this.domNode);
-			
+
 			// tooltip
 			if (this.buttontooltip !== "") {
 				domAttr.set(this._zeroClipboardButton, 'title', this.buttontooltip);
@@ -162,3 +164,4 @@ require({
 
     });
 });
+require(['CopyToClipboard/widget/CopyToClipboard']);
