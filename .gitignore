@@ -1,0 +1,9 @@
+test/javasource/
+test/deployment/
+test/.classpath
+test/.project
+test/theme/
+*.launch
+*.tmp
+*.lock
+.idea/
