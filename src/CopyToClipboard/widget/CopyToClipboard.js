@@ -6,7 +6,7 @@
     ========================
 
     @file      : CopyToClipboard.js
-    @version   : 1.0
+    @version   : 1.1
     @author    : Luch Klooster
     @date      : 11-04-2015
     @copyright : FraternIT BV
@@ -63,8 +63,12 @@ define('CopyToClipboard/widget/CopyToClipboard', [
 			}
 
 			// compose button html
+			if (this.buttonimage !== "") {
+				this.buttoncaption = ' ' + this.buttoncaption;
+			};
 			this._zeroClipboardButton = domConstruct.create('button', {
 				'type': 'button',
+				'style': this.buttonstyle,
 				'class': 'btn mx-button btn-default CopyToClipboard_clip_button',
 				'id': domAttr.get(this._targetElement, 'id') + '_clip_button',
 				'innerHTML': this.buttoncaption
@@ -80,15 +84,15 @@ define('CopyToClipboard/widget/CopyToClipboard', [
 				domClass.add(this._zeroClipboardButton, this.buttonclass);
 			}
 			// style
-			if (this.buttonstyle !== "") {
-				domStyle.set(this._zeroClipboardButton, this.buttonstyle);
-			}
+			//if (this.buttonstyle == "") {
+			//	domStyle.set(this._zeroClipboardButton, this.buttonstyle);
+			//}
 			// buttonimage
 			if (this.buttonimage !== "") {
-				buttonImageNode = domConstruct.create('image', {
+				buttonImageNode = domConstruct.create('img', {
 					'src': this.buttonimage
 				});
-				domConstruct.place(this.buttonImageNode, this._zeroClipboardButton);
+				domConstruct.place(buttonImageNode, this._zeroClipboardButton, 'first');
 			}
 			this._initiateZeroClipboard();
 		},
