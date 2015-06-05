@@ -6,7 +6,7 @@
     ========================
 
     @file      : CopyToClipboard.js
-    @version   : 1.1
+    @version   : 1.2
     @author    : Luch Klooster
     @date      : 11-04-2015
     @copyright : FraternIT BV
@@ -110,8 +110,10 @@ define('CopyToClipboard/widget/CopyToClipboard', [
 				clip.on("copy", lang.hitch(this, function (event) {
 					console.debug("Copy event");
 
-					var inputNode, textareaNode = null,
-						selectNode = null;
+					var inputNode = null,
+						textareaNode = null,
+						selectNode = null,
+						labelNode = null;
 
 					inputNode = domQuery(this._targetElementSelector + " input")[0];
 					if (inputNode) {
@@ -130,6 +132,13 @@ define('CopyToClipboard/widget/CopyToClipboard', [
 						event.clipboardData.setData('text/plain', selectNode.options[selectNode.selectedIndex].text);
 						return;
 					}
+					
+					labelNode = domQuery(this._targetElementSelector + " label")[0];
+					if (labelNode) {
+						event.clipboardData.setData('text/plain', labelNode.textContent);
+						return;
+					}
+
 				}));
 
 				clip.on("aftercopy", lang.hitch(this, function (event) {
