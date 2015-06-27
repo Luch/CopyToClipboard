@@ -17,11 +17,11 @@
 
 */
 // Required module list. Remove unnecessary modules, you can always get them back from the boilerplate.
-define('CopyToClipboard/widget/CopyToClipboard', [
+define([
 	'dojo/_base/declare', 'mxui/widget/_WidgetBase', 'dijit/_TemplatedMixin',
-	'mxui/dom', 'dojo/dom', 'dojo/query', 'dojo/dom-class', 'dojo/dom-style', 'dojo/dom-construct', 'dojo/dom-attr', 'dojo/_base/lang', 'dojo/text', 'dojo/text!CopyToClipboard/widget/template/CopyToClipboard.html',
-	'widgets/CopyToClipboard/lib/ZeroClipboard.min'
-], function (declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domClass, domStyle, domConstruct, domAttr, lang, text, widgetTemplate, ZeroClipboard) {
+	'mxui/dom', 'dojo/dom', 'dojo/query', 'dojo/dom-class', 'dojo/dom-style', 'dojo/dom-construct', 'dojo/dom-attr', 'dojo/_base/lang', 'dojo/text', 'CopyToClipboard/lib/jquery', 
+	'dojo/text!CopyToClipboard/widget/template/CopyToClipboard.html', 'CopyToClipboard/lib/ZeroClipboard'
+], function (declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domClass, domStyle, domConstruct, domAttr, lang, text, _jQuery, widgetTemplate, ZeroClipboard) {
 	'use strict';
 
 	// Declare widget's prototype.
@@ -167,4 +167,6 @@ define('CopyToClipboard/widget/CopyToClipboard', [
 
 	});
 });
-require(['CopyToClipboard/widget/CopyToClipboard']);
+require(['CopyToClipboard/widget/CopyToClipboard'], function () {
+    'use strict';
+});
